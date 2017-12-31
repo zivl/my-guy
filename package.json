@@ -3,6 +3,7 @@
   "description": "Interactive Web App for My Guy, a baby who just wants to type the keyboard with no reason...",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zivl.github.io/my-guy/",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
