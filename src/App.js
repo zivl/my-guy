@@ -1,34 +1,65 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class App extends Component {
-  
-  state = {
-    text: ''
+function randomPos() {
+  let rand = Math.random() * 100;
+  while (rand > 90 || rand < 10) {
+    rand = Math.random() * 100;
   }
-  
+
+  return `${Math.floor(rand)}%`;
+}
+
+
+class App extends Component {
+  state = {
+    text: []
+  }
+
   render() {
     return (
       <div className="App">
-        <input ref={input => this.textInput = input} type="text" onKeyDown={evt => this.onKeyDown(evt)} />
-        <span className="chars">{this.state.text}</span>
+        <input
+          ref={input => (this.textInput = input)}
+          type="text"
+          onKeyDown={evt => this.onKeyDown(evt)}
+        />
+        {this.state.text.map((t, i) => (
+          <span
+            className="chars"
+            key={i}
+            style={{
+              top: randomPos(),
+              left: randomPos(),
+              visibility: this.state.visibility
+            }}
+          >
+            {t}
+          </span>
+        ))}
       </div>
-    );
+    )
   }
 
   componentDidMount() {
-    this.focusTextInput();
+    this.focusTextInput()
   }
   componentDidUpdate() {
-    this.focusTextInput();
+    this.focusTextInput()
   }
 
   focusTextInput() {
-    this.textInput.focus();
+    this.textInput.focus()
   }
 
   onKeyDown(event) {
-    this.setState({ text: event.key })
+    this.setState({ text: this.state.text.concat(event.key) })
+    console.log(this.state.text)
+    setTimeout(() => {
+      const newText = [].concat(this.state.text)
+      newText.shift()
+      this.setState({ text: newText })
+    }, 5000)
   }
 }
 

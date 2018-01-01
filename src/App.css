@@ -1,59 +1,70 @@
-@-webkit-keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 92%; }
-  50% {
-    background-position: 100% 9%; }
-  100% {
-    background-position: 0% 92%; } }
-
-@-moz-keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 92%; }
-  50% {
-    background-position: 100% 9%; }
-  100% {
-    background-position: 0% 92%; } }
-
 @keyframes backgroundAnimation {
   0% {
-    background-position: 0% 92%; }
+    background-color: #daa0a0; }
+  5% {
+    background-color: #b88b8b; }
+  10% {
+    background-color: #cdb59c; }
+  15% {
+    background-color: #d8cb8b; }
+  20% {
+    background-color: #cae07e; }
+  25% {
+    background-color: #caeb59; }
+  30% {
+    background-color: #aff075; }
+  35% {
+    background-color: #88f075; }
+  40% {
+    background-color: #75f098; }
+  45% {
+    background-color: #75f0e4; }
   50% {
-    background-position: 100% 9%; }
+    background-color: #75e1f0; }
+  55% {
+    background-color: #ac75f0; }
+  60% {
+    background-color: #dd75f0; }
+  65% {
+    background-color: #f075d2; }
+  70% {
+    background-color: #f07591; }
+  75% {
+    background-color: #e38a8a; }
+  80% {
+    background-color: #ac75f0; }
+  85% {
+    background-color: #75e1f0; }
+  90% {
+    background-color: #88f075; }
+  95% {
+    background-color: #cae07e; }
   100% {
-    background-position: 0% 92%; } }
-
-@-webkit-keyframes charAnimation {
-  0% {
-    font-size: 100px;
-    color: black; }
-  100% {
-    font-size: 0px;
-    color: transparent; } }
+    background-color: #d8cb8b; } }
 
 @keyframes charAnimation {
   0% {
-    font-size: 100px;
-    color: black; }
+    font-size: 300px;
+    opacity: 1; }
   100% {
     font-size: 0px;
-    color: transparent; } }
+    opacity: 0; } }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: linear-gradient(230deg, #daa0a0, #b88b8b, #cdb59c, #d8cb8b, #dbe07e, #cae07e, #caeb59, #aff075, #88f075, #75f098, #75f0e4, #75e1f0, #75abf0, #757af0, #ac75f0, #dd75f0, #f075d2, #f07591, #e38a8a);
-  background-size: 3800% 3800%;
-  -webkit-animation: backgroundAnimation 59s ease infinite;
-  -moz-animation: backgroundAnimation 59s ease infinite;
   animation: backgroundAnimation 59s ease infinite; }
+
+input {
+  opacity: 0.1;
+  width: 1px; }
 
 .App {
   text-align: center; }
 
 .chars {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-animation: charAnimation 5s ease infinite;
-  animation: charAnimation 5s ease infinite; }
+  animation: charAnimation 3s ease infinite; }
+  .chars:nth-child(even) {
+    color: white; }
